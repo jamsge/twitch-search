@@ -31,6 +31,9 @@ app.get('/user/:username', function(req, res){
               message:"No channel found."
             })
           default:
+            res.json({
+              message:"Something went wrong."
+            })
         }
       })
   }
@@ -41,7 +44,7 @@ app.get('/user/:username', function(req, res){
     })
 })
 
-app.use('/', express.static('../twitch-search/dist/'))
+app.use('/', express.static('../frontend/dist/'))
 
 app.listen(3000, ()=>{
     console.log("listening on port 3000");
