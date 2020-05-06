@@ -43,11 +43,9 @@ export default {
   },
   methods:{
     getUser(username){
-      console.log(process.env.VUE_APP_BASEURL);
       axios.get(process.env.VUE_APP_BASEURL + "user/" + username)
         .then(res => {
           const data = res.data;
-          console.log(data);
           this.username = data.display_name;
           this.followCount = data.followers;
         })
@@ -56,7 +54,6 @@ export default {
           this.username = "Error: No user found with this name."
           this.followCount = -1;
         })
-      // console.log(this.username)
     }
   }
 }
