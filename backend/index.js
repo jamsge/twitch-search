@@ -24,17 +24,8 @@ app.get('/user/:username', function(req, res){
         }
       })
       .catch(err => {
-        res.status(err.response.status)
-        switch(err.response.status){
-          case 404 || 422:
-            res.json({
-              message:"No channel found."
-            })
-          default:
-            res.json({
-              message:"Something went wrong."
-            })
-        }
+				console.log(err.toString());
+				res.status(500).json({error: err.toString()});
       })
   }
 
