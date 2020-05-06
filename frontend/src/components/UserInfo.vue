@@ -11,8 +11,6 @@
 
 <script>
   export default {
-    components:{
-    },
     props: {
       username: { type:String },
       followers: { type:Number }

@@ -32,7 +32,7 @@ Vue.use(IconsPlugin)
 export default {
   data () {
     return {
-      username: '', // This value is set to the value emitted by the child
+      username: '', 
       followCount: -1,
     }
   },

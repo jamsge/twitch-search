@@ -12,11 +12,11 @@
 <script>
 	export default {
 		data(){
+			// "value" is bound to the input
 			return { value: '' }
 		},
 		methods: {
-			// Define the method that emits data to the parent as the first parameter to `$emit()`.
-			// This is referenced in the <template> call in the parent. The second parameter is the payload.
+			// called on submission, emits childToParent event while also passing whatever's in input as a payload
 			emitToParent () {
 				this.$emit('childToParent', this.value)
 			}

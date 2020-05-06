@@ -12,6 +12,7 @@ app.get('/user/:username', function(req, res){
   const username = req.params.username;
   console.log(username)
 
+  // call twich api via axios when "childToParent" event is emitted
   function getUser(username){
     return axios.get(`https://api.twitch.tv/kraken/channels/${username}`, {
       headers:{
@@ -28,13 +29,14 @@ app.get('/user/:username', function(req, res){
 				res.status(500).json({error: err.toString()});
       })
   }
-
+  
   getUser(username)
     .then(data => {
       res.send(data);
     })
 })
 
+// serve build from frontend folder
 app.use('/', express.static('../frontend/dist/'))
 
 app.listen(3000, ()=>{
