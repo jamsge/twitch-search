@@ -2,7 +2,9 @@
 	<div>
 		<b-input-group>
 			<b-form-input @keyup.enter.native="emitToParent" v-model="value" size="lg" placeholder="Twitch Name" id="input"></b-form-input>
-			<b-button @click="emitToParent" size="lg" variant="info" id="submit">Submit</b-button>
+			<b-input-group-append>
+				<b-button @click="emitToParent" size="lg" variant="outline-success" id="submit">Submit</b-button>
+			</b-input-group-append>
 		</b-input-group>
 	</div>
 </template>
